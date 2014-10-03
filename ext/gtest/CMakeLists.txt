@@ -1,5 +1,5 @@
 # Google Test C++ library.
-# CMakeLists.txt credits: https://github.com/snikulov/google-test-examples
+# Taken from: https://github.com/snikulov/google-test-examples
 project(gtest_builder C CXX)
 include(ExternalProject)
 
