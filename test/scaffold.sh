@@ -2,7 +2,7 @@
 
 [[ "$1" == "" ]] && echo "No arguments provided. Usage: $0 ClassName" && exit
 
-cat << EOF > "$1.cpp"
+cat << EOF > "$1Test.cpp"
 #include "gtest/gtest.h"
 #include "$1.hpp"
 using Raytracer::$1;
