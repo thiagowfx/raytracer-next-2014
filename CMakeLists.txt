@@ -25,9 +25,16 @@ include_directories(/usr/include/eigen3)
 
 set(
 	RAYTRACER_SOURCES
+	"${SRC_DIR}/Globals.cpp"
 	"${SRC_DIR}/ViewPlane.cpp"
 	)
 add_library(RAYTRACER_LIBRARY OBJECT ${RAYTRACER_SOURCES})
+
+add_executable(
+	main
+	"${SRC_DIR}/main.cpp"
+	$<TARGET_OBJECTS:RAYTRACER_LIBRARY>
+	)
 
 ########################################################
 
