@@ -1,4 +1,5 @@
 #!/bin/bash
+# Scaffold a new test file.
 
 [[ "$1" == "" ]] && echo "No arguments provided. Usage: $0 ClassName" && exit
 

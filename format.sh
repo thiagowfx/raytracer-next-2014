@@ -1,4 +1,5 @@
 #!/bin/bash
+# Format all source files of your project. 
 
 # Try to detect clang on the system.
 [[ -x $(which clang-format) ]] && CLANG_FORMAT=clang-format
