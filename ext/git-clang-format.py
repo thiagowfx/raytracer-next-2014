@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # Taken from: https://llvm.org/svn/llvm-project/cfe/trunk/tools/clang-format/git-clang-format
 #
 #===- git-clang-format - ClangFormat Git Integration ---------*- python -*--===#
