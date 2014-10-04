@@ -1,0 +1,11 @@
+# Maintainer: Thiago Perrotta <echo dGhpYWdvcGVycm90dGE5NUBnbWFpbC5jb20K | base64 -d >
+pkgname=raytracer-lcg-meta
+pkgver=1
+pkgrel=1
+pkgdesc="Dependencies for the Raytracer LCG project."
+arch=('x86_64' 'i686')
+url="http://thiagowfx.github.io/"
+license=('GPL')
+groups=('thiagowfx')
+depends=('boost' 'cmake' 'eigen' 'gcc' 'gtest' 'qtcreator')
+optdepends=('emacs' 'vim-runtime')
