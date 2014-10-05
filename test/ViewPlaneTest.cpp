@@ -25,7 +25,7 @@ class ViewPlaneTestClass : public ::testing::Test {
   virtual void SetUp() {
     x = new ViewPlane();
     x_test = new ViewPlane();
-    
+
     x->set_hres(10);
     x->set_vres(10);
     x->set_pixel_size(10.0);
@@ -56,4 +56,3 @@ TEST_F(ViewPlaneTestClass, BinarySerializationTest) {
   load_binary<ViewPlane>(*x_test, filename);
   EXPECT_EQ(*x, *x_test);
 }
-
