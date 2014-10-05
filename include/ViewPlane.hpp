@@ -4,7 +4,7 @@
 #include "Globals.hpp"
 
 namespace Raytracer {
-	/** @brief A ViewPlane stores image settings. */
+/** @brief A ViewPlane stores image settings. */
 class ViewPlane {
  public:
   ViewPlane();
