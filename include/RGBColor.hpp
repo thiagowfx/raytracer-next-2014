@@ -13,7 +13,7 @@ class RGBColor {
   RGBColor(float, float, float);
   RGBColor(const RGBColor&);
   RGBColor();
-  ~RGBColor();
+  virtual ~RGBColor();
   RGBColor& operator=(const RGBColor&);
   bool operator==(const RGBColor&) const;
   bool operator!=(const RGBColor&) const;

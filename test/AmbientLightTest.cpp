@@ -5,19 +5,19 @@ using Raytracer::Light;
 using Raytracer::RGBColor;
 
 TEST(AmbientLightTest, GetterSetterTest) {
-	AmbientLight x;
+  AmbientLight x;
 
-	x.set_radiance(0.1);
-	x.set_color(RGBColor(0.1, 0.1, 0.1));
-	x.set_shadows(true);
+  x.set_radiance(0.1);
+  x.set_color(RGBColor(0.1, 0.1, 0.1));
+  x.set_shadows(true);
 
-	EXPECT_DOUBLE_EQ(0.1, x.get_radiance());
-	EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), x.get_color());
-	EXPECT_FALSE(x.get_shadows());
+  EXPECT_DOUBLE_EQ(0.1, x.get_radiance());
+  EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), x.get_color());
+  EXPECT_FALSE(x.get_shadows());
 
-	Light* y = new AmbientLight();
-	y->set_shadows(true);
-	EXPECT_FALSE(y->get_shadows());
+  Light* y = new AmbientLight();
+  y->set_shadows(true);
+  EXPECT_FALSE(y->get_shadows());
 }
 
 class AmbientLightTestClass : public ::testing::Test {
@@ -52,4 +52,3 @@ TEST_F(AmbientLightTestClass, BinarySerializationTest) {
   load_binary<AmbientLight>(*x_test, filename);
   EXPECT_EQ(*x, *x_test);
 }
-

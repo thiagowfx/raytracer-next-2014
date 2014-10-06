@@ -11,11 +11,11 @@ Ray::Ray(const Vector3d& origin, const Vector3d& direction)
 Ray::Ray(const Ray& ray) : origin(ray.origin), direction(ray.direction) {}
 
 Ray& Ray::operator=(const Ray& rhs) {
-	if (this != &rhs) {
-		origin = rhs.origin;
-		direction = rhs.direction;
-	}
-	return *this;
+  if (this != &rhs) {
+    origin = rhs.origin;
+    direction = rhs.direction;
+  }
+  return *this;
 }
 
 bool Ray::operator==(const Ray& o) const {

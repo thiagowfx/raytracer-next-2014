@@ -13,7 +13,7 @@ class ShadeRec {
  public:
   ShadeRec(World&);
   ShadeRec(const ShadeRec&);
-  ~ShadeRec();
+  virtual ~ShadeRec();
   bool operator==(const ShadeRec&) const;
 
   /** Did the ray hit any object? */

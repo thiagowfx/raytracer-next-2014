@@ -9,7 +9,7 @@ class ViewPlane {
  public:
   ViewPlane();
   ViewPlane(const ViewPlane&);
-  ~ViewPlane();
+  virtual ~ViewPlane();
   ViewPlane& operator=(const ViewPlane&);
   bool operator==(const ViewPlane&) const;
   void set_hres(const unsigned);
