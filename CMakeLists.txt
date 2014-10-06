@@ -26,6 +26,7 @@ include_directories(/usr/include/eigen3)
 set(
 	RAYTRACER_SOURCES
 	"${SRC_DIR}/Globals.cpp"
+	"${SRC_DIR}/RGBColor.cpp"
 	"${SRC_DIR}/ViewPlane.cpp"
 	)
 add_library(RAYTRACER_LIBRARY OBJECT ${RAYTRACER_SOURCES})
@@ -41,22 +42,24 @@ add_executable(
 option(test "Build all tests." ON)
 if (test)
   enable_testing()
-  add_subdirectory(${EXT_PROJECTS_DIR}/gtest)
-  include_directories(${GTEST_INCLUDE_DIRS})
   set(PROJECT_TEST_NAME ${PROJECT_NAME_STR}UnitTests)
   file(GLOB TEST_SRC_FILES ${TEST_DIR}/*.cpp)
+  # add_subdirectory(${EXT_PROJECTS_DIR}/gtest)
+  find_package(GTest)
+  include_directories(${GTEST_INCLUDE_DIRS})
   add_executable(
 	  ${PROJECT_TEST_NAME}
 	  ${TEST_SRC_FILES}
 	  $<TARGET_OBJECTS:RAYTRACER_LIBRARY>
 	  )
-  add_dependencies(${PROJECT_TEST_NAME} googletest)
+  # add_dependencies(${PROJECT_TEST_NAME} googletest)
   target_link_libraries(
 	  ${PROJECT_TEST_NAME}
-	  ${GTEST_LIBS_DIR}/libgtest.a
-	  ${GTEST_LIBS_DIR}/libgtest_main.a
+	  # ${GTEST_LIBS_DIR}/libgtest.a
+	  # ${GTEST_LIBS_DIR}/libgtest_main.a
+	  ${GTEST_BOTH_LIBRARIES}
 	  ${Boost_LIBRARIES}
 	  pthread
 	  )
-  add_test(${PROJECT_TEST_NAME} ${PROJECT_TEST_NAME})
+  GTEST_ADD_TESTS(${PROJECT_TEST_NAME} "" ${TEST_SRC_FILES})
 endif()
