@@ -17,4 +17,5 @@ RGBColor& RGBColor::operator=(const RGBColor& rhs) {
     b = rhs.b;
   }
   return *this;
-}}
+}
+}

@@ -24,7 +24,7 @@ class ViewPlane {
   bool get_out_of_gamut() const;
   unsigned get_max_depth() const;
 
-private:
+ private:
   /** Horizontal Image Resolution. */
   unsigned hres;
 
@@ -43,7 +43,7 @@ private:
   /** Maximum number of bounces for reflective rays. */
   unsigned max_depth;
 
-public:
+ public:
   friend class boost::serialization::access;
   template <class Archive>
   void serialize(Archive& ar, const unsigned int version) {

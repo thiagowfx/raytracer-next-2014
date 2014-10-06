@@ -5,7 +5,8 @@
 #include <algorithm>
 
 namespace Raytracer {
-/** @brief A color in the RGB format, which components are in the 0.0 to 1.0 range. */
+/** @brief A color in the RGB format, which components are in the 0.0 to 1.0
+ * range. */
 class RGBColor {
  public:
   /** Create a RGBColor with the specified red, green and blue components. */
@@ -30,7 +31,7 @@ class RGBColor {
   void set_g(float);
   void set_b(float);
 
-private:
+ private:
   /** Red component. */
   float r;
 
@@ -40,7 +41,7 @@ private:
   /** Blue component. */
   float b;
 
-public:
+ public:
   friend RGBColor operator*(const float, const RGBColor&);
 
   /** Raise color components to the specified power. */
@@ -107,7 +108,7 @@ inline RGBColor& RGBColor::operator+=(const RGBColor& c) {
 }
 
 inline RGBColor RGBColor::operator*(const float a) const {
- return RGBColor(r * a, g * a, b * a);
+  return RGBColor(r * a, g * a, b * a);
 }
 
 inline RGBColor& RGBColor::operator*=(const float a) {
@@ -146,30 +147,17 @@ inline RGBColor operator*(const float a, const RGBColor& c) {
   return RGBColor(a * c.r, a * c.g, a * c.b);
 }
 
-inline float RGBColor::get_r() const {
-	return r;
-}
+inline float RGBColor::get_r() const { return r; }
 
-inline float RGBColor::get_g() const {
-	return g;
-}
+inline float RGBColor::get_g() const { return g; }
 
-inline float RGBColor::get_b() const {
-	return b;
-}
+inline float RGBColor::get_b() const { return b; }
 
-inline void RGBColor::set_r(float r) {
-	this->r = r;
-}
+inline void RGBColor::set_r(float r) { this->r = r; }
 
-inline void RGBColor::set_g(float g) {
-	this->g = g;
-}
+inline void RGBColor::set_g(float g) { this->g = g; }
 
-inline void RGBColor::set_b(float b) {
-	this->b = b;
-}
-
+inline void RGBColor::set_b(float b) { this->b = b; }
 }
 
 #endif  // _RGBCOLOR_H_
