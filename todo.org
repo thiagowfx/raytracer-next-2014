@@ -1,2 +1,3 @@
-* DONE RGBColor 				 :serialized:migrated:tested:
-* DONE ViewPlane                                 :serialized:migrated:tested:
+* DONE Ray						  :serialized:tested:
+* DONE RGBColor						  :serialized:tested:
+* DONE ViewPlane					  :serialized:tested:
