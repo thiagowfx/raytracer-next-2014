@@ -10,6 +10,7 @@ class ViewPlane {
   ViewPlane();
   ViewPlane(const ViewPlane&);
   ~ViewPlane();
+  ViewPlane& operator=(const ViewPlane&);
   bool operator==(const ViewPlane&) const;
   void set_hres(const unsigned);
   void set_vres(const unsigned);

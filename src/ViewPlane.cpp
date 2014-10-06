@@ -17,6 +17,18 @@ ViewPlane::ViewPlane(const ViewPlane& vp)
       out_of_gamut(vp.out_of_gamut),
       max_depth(vp.max_depth) {}
 
+ViewPlane& ViewPlane::operator=(const ViewPlane& rhs) {
+	if (this != &rhs) {
+		hres = rhs.hres;
+		vres = rhs.vres;
+		pixel_size = rhs.pixel_size;
+		inv_gamma = rhs.inv_gamma;
+		out_of_gamut = rhs.out_of_gamut;
+		max_depth = rhs.max_depth;
+	}
+	return *this;
+}
+
 bool ViewPlane::operator==(const ViewPlane& o) const {
   return hres == o.hres && vres == o.vres && pixel_size == o.pixel_size &&
          inv_gamma == o.inv_gamma && out_of_gamut == o.out_of_gamut &&

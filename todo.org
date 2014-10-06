@@ -1,3 +1,4 @@
+* DONE Globals                                                       :tested:
 * DONE Ray                                                :serialized:tested:
 * DONE RGBColor                                           :serialized:tested:
 * DONE ViewPlane                                          :serialized:tested:

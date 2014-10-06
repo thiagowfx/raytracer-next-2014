@@ -14,6 +14,7 @@ class Ray {
   Ray();
   Ray(const Ray&);
   ~Ray();
+  Ray& operator=(const Ray&);
   bool operator==(const Ray&) const;
   void set_origin(const Vector3d&);
   void set_direction(const Vector3d&);
