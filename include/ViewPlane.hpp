@@ -24,7 +24,6 @@ class ViewPlane {
   bool get_out_of_gamut() const;
   unsigned get_max_depth() const;
 
- private:
   /** Horizontal Image Resolution. */
   unsigned hres;
 
@@ -34,15 +33,16 @@ class ViewPlane {
   /** Pixel size; decreasing means to zoom into a scene. */
   double pixel_size;
 
-  /** Inverse of gamma factor. */
-  double inv_gamma;
-
   /** If true, out-of-gamut colors are displayed differently. */
   bool out_of_gamut;
 
   /** Maximum number of bounces for reflective rays. */
   unsigned max_depth;
 
+ private:
+  /** Inverse of gamma factor. */
+  double inv_gamma;
+ 
  public:
   friend class boost::serialization::access;
   template <class Archive>
