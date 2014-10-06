@@ -28,6 +28,7 @@ set(
 	"${SRC_DIR}/Globals.cpp"
 	"${SRC_DIR}/Ray.cpp"
 	"${SRC_DIR}/RGBColor.cpp"
+	"${SRC_DIR}/ShadeRec.cpp"
 	"${SRC_DIR}/ViewPlane.cpp"
 	)
 add_library(RAYTRACER_LIBRARY OBJECT ${RAYTRACER_SOURCES})
