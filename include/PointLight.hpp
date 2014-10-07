@@ -1,14 +1,12 @@
-#ifndef _POINTLIGHT_MINE_
-#define _POINTLIGHT_MINE_
+#ifndef _POINTLIGHT_H_
+#define _POINTLIGHT_H_
 
-#include "Light.h"
-#include "ShadeRec.h"
-#include "World.h"
+#include "Light.hpp"
+#include "ShadeRec.hpp"
+#include "World.hpp"
 
 namespace Raytracer {
-/**
- * @brief Represents a point light, having a location, a color and an intensity.
- */
+/** @brief A point light has a location, a color and an intensity. */
 class PointLight : public Light {
  public:
   /** Create a point light at the specified location. */
@@ -23,10 +21,12 @@ class PointLight : public Light {
   virtual bool in_shadow(const Ray&, ShadeRec&) const;
   virtual RGBColor L(ShadeRec&);
 
-  /* Setters. */
   void set_radiance(double);
   void set_color(const RGBColor);
   void set_location(const Vector3d&);
+  double get_radiance() const;
+  RGBColor get_color() const;
+  Vector3d get_location() const;
 
   friend class boost::serialization::access;
   template <class Archive>
@@ -39,11 +39,13 @@ class PointLight : public Light {
 
  private:
   /** Radiance of light. */
-  double ls = 1.0;
+  double ls;
+
   /** Color of light. */
-  RGBColor color = white;
+  RGBColor color;
+
   /** Location of light. */
-  Vector3d location = Vector3d::Zero();
+  Vector3d location;
 };
 
 inline void PointLight::set_color(const RGBColor color) { this->color = color; }
@@ -53,6 +55,12 @@ inline void PointLight::set_radiance(double ls) { this->ls = ls; }
 inline void PointLight::set_location(const Vector3d& location) {
   this->location = location;
 }
+
+inline Vector3d get_location() const { return this->location; }
+
+inline RGBCOlor get_color() const { return this->color; }
+
+inline double get_radiance() const { return this->ls; }
 }
 
-#endif  // _POINTLIGHT_MINE_
+#endif  // _POINTLIGHT_H_

@@ -1,10 +1,18 @@
-#include "PointLight.h"
+#include "PointLight.hpp"
 
 namespace Raytracer {
-PointLight::PointLight() {}
+PointLight::PointLight() :
+		Light(),
+		ls(1.0),
+		color(white),
+		location(Vector3d::Zero())
+	{}
 
 PointLight::PointLight(const Vector3d& location)
-    : Light(), location(location) {}
+    : Light(), 
+	ls(1.0),
+	color(white),
+	location(location) {}
 
 PointLight::PointLight(const PointLight& a)
     : Light(a), ls(a.ls), color(a.color), location(a.location) {}
@@ -24,7 +32,6 @@ Vector3d PointLight::get_direction(ShadeRec& sr) {
 
 RGBColor PointLight::L(ShadeRec& sr) { return ls * color; }
 
-/* Chapter 16 */
 bool PointLight::in_shadow(const Ray& ray, ShadeRec& sr) const {
   double t = 0;
   const unsigned num_objects = sr.w.objects.size();
