@@ -1,7 +1,7 @@
 #include "BRDF.hpp"
 
 namespace Raytracer {
-BRDF::BRDF() { set_sampler(new MultiJittered(10), 15.0); }
+BRDF::BRDF() { set_sampler(new MultiJittered(10), 15); }
 
 BRDF::BRDF(const BRDF& brdf) {
   if (brdf.sampler_ptr) {
