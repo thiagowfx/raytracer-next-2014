@@ -35,6 +35,7 @@ set(
 	"${SRC_DIR}/LambertianBRDF.cpp"
 	# "${SRC_DIR}/Light.cpp"
 	"${SRC_DIR}/Material.cpp"
+	"${SRC_DIR}/Matte.cpp"
 	"${SRC_DIR}/MultiJitteredSampler.cpp"
 	"${SRC_DIR}/NRooksSampler.cpp"
 	"${SRC_DIR}/PerfectSpecularBRDF.cpp"
