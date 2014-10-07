@@ -4,13 +4,13 @@ using Raytracer::Lambertian;
 using Raytracer::RGBColor;
 
 TEST(LambertianTest, GetterSetterTest) {
-  Lambertian x;
+  Lambertian l;
 
-  x->set_kd(0.1);
-  x->set_cd(RGBColor(0.1, 0.1, 0.1));
+  l.set_kd(0.1);
+  l.set_cd(RGBColor(0.1, 0.1, 0.1));
 
-  EXPECT_DOUBLE_EQ(0.1, x->get_kd());
-  EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), x->get_cd());
+  EXPECT_DOUBLE_EQ(0.1, l.get_kd());
+  EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), l.get_cd());
 }
 
 class LambertianTestClass : public ::testing::Test {

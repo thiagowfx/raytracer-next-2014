@@ -48,11 +48,6 @@ class BRDF {
   /** Sampler for the BRDF. */ 
   Sampler* sampler_ptr;
 };
-
-void BRDF::set_sampler(Sampler* sampler, const double exp) {
-	this->sampler_ptr = sampler;
-	this->sampler_ptr->map_samples_to_hemisphere(exp);
-}
 }
 
 #endif  // _BRDF_H_

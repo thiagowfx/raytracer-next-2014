@@ -25,16 +25,18 @@ include_directories(/usr/include/eigen3)
 
 set(
 	RAYTRACER_SOURCES
-	"${SRC_DIR}/AmbientLight.cpp"
+	# "${SRC_DIR}/AmbientLight.cpp"
 	"${SRC_DIR}/BRDF.cpp"
-	"${SRC_DIR}/DirectionalLight.cpp"
+	# "${SRC_DIR}/DirectionalLight.cpp"
 	"${SRC_DIR}/Globals.cpp"
 	"${SRC_DIR}/LambertianBRDF.cpp"
-	"${SRC_DIR}/Light.cpp"
+	# "${SRC_DIR}/Light.cpp"
 	"${SRC_DIR}/MultiJitteredSampler.cpp"
+	"${SRC_DIR}/PureRandomSampler.cpp"
 	"${SRC_DIR}/Ray.cpp"
 	"${SRC_DIR}/RegularSampler.cpp"
 	"${SRC_DIR}/RGBColor.cpp"
+	"${SRC_DIR}/Sampler.cpp"
 	"${SRC_DIR}/ShadeRec.cpp"
 	"${SRC_DIR}/ViewPlane.cpp"
 	)
@@ -52,7 +54,7 @@ option(test "Build all tests." ON)
 if (test)
   enable_testing()
   set(PROJECT_TEST_NAME ${PROJECT_NAME_STR}UnitTests)
-  file(GLOB TEST_SRC_FILES ${TEST_DIR}/*.cpp)
+  file(GLOB TEST_SRC_FILES ${TEST_DIR}/*Test.cpp)
   # add_subdirectory(${EXT_PROJECTS_DIR}/gtest)
   find_package(GTest)
   include_directories(${GTEST_INCLUDE_DIRS})

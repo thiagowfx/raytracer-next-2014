@@ -43,4 +43,9 @@ RGBColor BRDF::f(const ShadeRec& sr, const Eigen::Vector3d& wo,
 RGBColor BRDF::rho(const ShadeRec& sr, const Eigen::Vector3d& wo) const {
   return black;
 }
+
+void BRDF::set_sampler(Sampler* sampler, const double exp) {
+	this->sampler_ptr = sampler;
+	this->sampler_ptr->map_samples_to_hemisphere(exp);
+}
 }
