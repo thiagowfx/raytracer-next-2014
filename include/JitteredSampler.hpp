@@ -6,7 +6,7 @@
 namespace Raytracer {
 class Jittered : public Sampler {
  public:
-  Jittered(const int number_of_samples = 10);
+  Jittered(const int number_of_samples = kSamples);
   Jittered(const Jittered&);
   virtual const char* to_string();
   virtual Jittered* clone() const;

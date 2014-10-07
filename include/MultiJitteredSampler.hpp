@@ -6,7 +6,7 @@
 namespace Raytracer {
 class MultiJittered : public Sampler {
  public:
-  MultiJittered(const int number_of_samples = 10);
+  MultiJittered(const int number_of_samples = kSamples);
   MultiJittered(const MultiJittered&);
   virtual const char* to_string();
   virtual MultiJittered* clone() const;

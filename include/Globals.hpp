@@ -88,10 +88,10 @@ const double kExp = 12.0;
 const double kKr = 0.75;
 
 /** Default number of samples. */
-const unsigned kSamples = 10;
+const unsigned kSamples = 2;
 
 /** Default number of sampling sets. */
-const unsigned kSampleSets = 15;
+const unsigned kSampleSets = 1;
 
 /** Return a random integer, from begin to end, or from 0 to RAND_MAX. */
 int get_random_int(int begin = 0, int end = RAND_MAX);

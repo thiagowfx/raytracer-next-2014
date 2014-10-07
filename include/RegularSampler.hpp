@@ -8,7 +8,7 @@ namespace Raytracer {
  */
 class Regular : public Sampler {
  public:
-  Regular(const int number_of_samples = 10);
+  Regular(const int number_of_samples = kSamples);
   Regular(const Regular&);
   virtual const char* to_string();
   virtual Regular* clone() const;

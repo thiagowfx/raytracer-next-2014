@@ -6,7 +6,7 @@
 namespace Raytracer {
 class Hammersley : public Sampler {
  public:
-  Hammersley(const int number_of_samples = 10);
+  Hammersley(const int number_of_samples = kSamples);
   Hammersley(const Hammersley&);
   virtual const char* to_string();
   virtual Hammersley* clone() const;

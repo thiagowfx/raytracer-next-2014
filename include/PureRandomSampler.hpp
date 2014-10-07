@@ -9,7 +9,7 @@ namespace Raytracer {
  */
 class PureRandom : public Sampler {
  public:
-  PureRandom(const int number_of_samples = 10);
+  PureRandom(const int number_of_samples = kSamples);
   PureRandom(const PureRandom&);
   virtual const char* to_string();
   virtual PureRandom* clone() const;

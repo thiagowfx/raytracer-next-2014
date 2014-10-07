@@ -10,7 +10,7 @@ namespace Raytracer {
  */
 class NRooks : public Sampler {
  public:
-  NRooks(const int number_of_samples = 10);
+  NRooks(const int number_of_samples = kSamples);
   NRooks(const NRooks&);
   virtual const char* to_string();
   virtual NRooks* clone() const;
