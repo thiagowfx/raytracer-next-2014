@@ -17,7 +17,8 @@ namespace Raytracer {
 class Sampler {
  public:
   /** Create a sampler with the given number of samples and sets. */
-  Sampler(const int number_of_samples = 10, const int number_of_sets = 100);
+  Sampler(const int number_of_samples = kSamples,
+          const int number_of_sets = kSampleSets);
   Sampler(const Sampler&);
   virtual Sampler* clone() const = 0;
   virtual ~Sampler();

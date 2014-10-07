@@ -176,9 +176,8 @@ Vector2d Sampler::sample_unit_disk() {
 Vector3d Sampler::sample_hemisphere() {
   if (count % number_of_samples == 0)  // start of a new pixel
     jump = (get_random_int() % number_of_sets) * number_of_samples;
-  return (
-      hemisphere_samples[jump +
-                         shuffled_indices[jump + count++ % number_of_samples]]);
+  return (hemisphere_samples
+              [jump + shuffled_indices[jump + count++ % number_of_samples]]);
 }
 
 Vector3d Sampler::sample_sphere() {

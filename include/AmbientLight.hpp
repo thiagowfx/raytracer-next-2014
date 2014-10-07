@@ -25,6 +25,7 @@ class AmbientLight : public Light {
   void set_color(const RGBColor);
   double get_radiance() const;
   RGBColor get_color() const;
+  /** Ambient light is present everywhere. */
   virtual bool get_shadows() const;
 
   friend class boost::serialization::access;

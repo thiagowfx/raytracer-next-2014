@@ -4,15 +4,13 @@ using Raytracer::Matte;
 using Raytracer::RGBColor;
 
 TEST(MatteTest, GetterSetterTest) {
-	Matte m;
+  Matte m;
 
-    m.set_ka(0.1);
-    m.set_kd(0.1);
-    m.set_cd(RGBColor(0.1, 0.1, 0.1);
-
-	EXPECT_DOUBLE_EQ(0.1, m.get_ka());
-	EXPECT_DOUBLE_EQ(0.1, m.get_kd());
-	EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), m.get)cd());
+  m.set_ka(0.1);
+  m.set_kd(0.1);
+  m.set_cd(RGBColor(0.1, 0.1, 0.1); EXPECT_DOUBLE_EQ(0.1, m.get_ka());
+           EXPECT_DOUBLE_EQ(0.1, m.get_kd());
+           EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), m.get) cd());
 }
 
 class MatteTestClass : public ::testing::Test {
@@ -48,4 +46,3 @@ TEST_F(MatteTestClass, BinarySerializationTest) {
   load_binary<Matte>(*x_test, filename);
   EXPECT_EQ(*x, *x_test);
 }
-

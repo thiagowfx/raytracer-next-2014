@@ -63,22 +63,22 @@ if (test)
   enable_testing()
   set(PROJECT_TEST_NAME ${PROJECT_NAME_STR}UnitTests)
   file(GLOB TEST_SRC_FILES ${TEST_DIR}/*Test.cpp)
-  # add_subdirectory(${EXT_PROJECTS_DIR}/gtest)
-  find_package(GTest)
+  add_subdirectory(${EXT_PROJECTS_DIR}/gtest)
+  # find_package(GTest)
   include_directories(${GTEST_INCLUDE_DIRS})
   add_executable(
 	  ${PROJECT_TEST_NAME}
 	  ${TEST_SRC_FILES}
 	  $<TARGET_OBJECTS:RAYTRACER_LIBRARY>
 	  )
-  # add_dependencies(${PROJECT_TEST_NAME} googletest)
+  add_dependencies(${PROJECT_TEST_NAME} googletest)
   target_link_libraries(
 	  ${PROJECT_TEST_NAME}
-	  # ${GTEST_LIBS_DIR}/libgtest.a
-	  # ${GTEST_LIBS_DIR}/libgtest_main.a
-	  ${GTEST_BOTH_LIBRARIES}
+	  ${GTEST_LIBS_DIR}/libgtest.a
+	  ${GTEST_LIBS_DIR}/libgtest_main.a
+	  # ${GTEST_BOTH_LIBRARIES}
 	  ${Boost_LIBRARIES}
 	  pthread
 	  )
-  GTEST_ADD_TESTS(${PROJECT_TEST_NAME} "" ${TEST_SRC_FILES})
+  # GTEST_ADD_TESTS(${PROJECT_TEST_NAME} "" ${TEST_SRC_FILES})
 endif()
