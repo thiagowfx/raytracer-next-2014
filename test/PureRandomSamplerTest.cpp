@@ -31,4 +31,3 @@ TEST_F(PureRandomTestClass, BinarySerializationTest) {
   load_binary<PureRandom>(*x_test, filename);
   EXPECT_EQ(*x, *x_test);
 }
-

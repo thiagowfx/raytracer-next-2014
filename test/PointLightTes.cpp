@@ -4,15 +4,15 @@ using Raytracer::PointLight;
 using Raytracer::RGBColor;
 
 TEST(PointLightTest, GetterSetterTest) {
-	PointLight p;
+  PointLight p;
 
-    p.set_radiance(0.1);
-    p.set_color(RGBColor(0.1, 0.1, 0.1));
-    p.set_location(Vector3d(0.1, 0.1, 0.1));
+  p.set_radiance(0.1);
+  p.set_color(RGBColor(0.1, 0.1, 0.1));
+  p.set_location(Vector3d(0.1, 0.1, 0.1));
 
-	EXPECT_DOUBLE_EQ(0.1, p.get_radiance());
-	EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), p.get_color());
-	EXPECT_EQ(Vector3d(0.1, 0.1, 0.1), p.get_location());
+  EXPECT_DOUBLE_EQ(0.1, p.get_radiance());
+  EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), p.get_color());
+  EXPECT_EQ(Vector3d(0.1, 0.1, 0.1), p.get_location());
 }
 
 class PointLightTestClass : public ::testing::Test {
@@ -48,4 +48,3 @@ TEST_F(PointLightTestClass, BinarySerializationTest) {
   load_binary<PointLight>(*x_test, filename);
   EXPECT_EQ(*x, *x_test);
 }
-

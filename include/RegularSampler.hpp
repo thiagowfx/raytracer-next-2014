@@ -4,7 +4,8 @@
 #include "Sampler.hpp"
 
 namespace Raytracer {
-/** @brief A Regular sampler distributes its samples uniformly in a unit square. */
+/** @brief A Regular sampler distributes its samples uniformly in a unit square.
+ */
 class Regular : public Sampler {
  public:
   Regular(const int number_of_samples = 10);

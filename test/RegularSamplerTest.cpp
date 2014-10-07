@@ -31,4 +31,3 @@ TEST_F(RegularTestClass, BinarySerializationTest) {
   load_binary<Regular>(*x_test, filename);
   EXPECT_EQ(*x, *x_test);
 }
-

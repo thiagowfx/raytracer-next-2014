@@ -4,15 +4,15 @@ using Raytracer::GlossySpecular;
 using Raytracer::RGBColor;
 
 TEST(GlossySpecularTest, GetterSetterTest) {
-	GlossySpecular g;
+  GlossySpecular g;
 
-    g.set_ks(0.1);
-    g.set_exp(0.1);
-    g.set_cs(RGBColor(0.1, 0.1, 0.1));
+  g.set_ks(0.1);
+  g.set_exp(0.1);
+  g.set_cs(RGBColor(0.1, 0.1, 0.1));
 
-	EXPECT_DOUBLE_EQ(0.1, g.get_ks());
-	EXPECT_DOUBLE_EQ(0.1, g.get_exp());
-	EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), g.get_cs());
+  EXPECT_DOUBLE_EQ(0.1, g.get_ks());
+  EXPECT_DOUBLE_EQ(0.1, g.get_exp());
+  EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), g.get_cs());
 }
 
 class GlossySpecularTestClass : public ::testing::Test {
@@ -48,4 +48,3 @@ TEST_F(GlossySpecularTestClass, BinarySerializationTest) {
   load_binary<GlossySpecular>(*x_test, filename);
   EXPECT_EQ(*x, *x_test);
 }
-

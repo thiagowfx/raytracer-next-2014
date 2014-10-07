@@ -31,4 +31,3 @@ TEST_F(JitteredTestClass, BinarySerializationTest) {
   load_binary<Jittered>(*x_test, filename);
   EXPECT_EQ(*x, *x_test);
 }
-

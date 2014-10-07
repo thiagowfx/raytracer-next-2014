@@ -31,4 +31,3 @@ TEST_F(HammersleyTestClass, BinarySerializationTest) {
   load_binary<Hammersley>(*x_test, filename);
   EXPECT_EQ(*x, *x_test);
 }
-

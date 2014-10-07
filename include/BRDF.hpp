@@ -41,11 +41,11 @@ class BRDF {
   friend class boost::serialization::access;
   template <class Archive>
   void serialize(Archive& ar, const unsigned int version) {
-	  BOOST_SERIALIZATION_NVP(sampler_ptr);
+    BOOST_SERIALIZATION_NVP(sampler_ptr);
   }
 
  protected:
-  /** Sampler for the BRDF. */ 
+  /** Sampler for the BRDF. */
   Sampler* sampler_ptr;
 };
 }

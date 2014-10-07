@@ -4,13 +4,13 @@ using Raytracer::PerfectSpecular;
 using Raytracer::RGBColor;
 
 TEST(PerfectSpecularTest, GetterSetterTest) {
-	PerfectSpecular p;
+  PerfectSpecular p;
 
-	p.set_kr(0.1);
-	p.set_cr(RGBColor(0.1, 0.1, 0.1));
+  p.set_kr(0.1);
+  p.set_cr(RGBColor(0.1, 0.1, 0.1));
 
-	EXPECT_DOUBLE_EQ(0.1, p.get_kr());
-	EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), p.get_cr());
+  EXPECT_DOUBLE_EQ(0.1, p.get_kr());
+  EXPECT_EQ(RGBColor(0.1, 0.1, 0.1), p.get_cr());
 }
 
 class PerfectSpecularTestClass : public ::testing::Test {
@@ -45,4 +45,3 @@ TEST_F(PerfectSpecularTestClass, BinarySerializationTest) {
   load_binary<PerfectSpecular>(*x_test, filename);
   EXPECT_EQ(*x, *x_test);
 }
-

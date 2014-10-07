@@ -31,4 +31,3 @@ TEST_F(NRooksTestClass, BinarySerializationTest) {
   load_binary<NRooks>(*x_test, filename);
   EXPECT_EQ(*x, *x_test);
 }
-

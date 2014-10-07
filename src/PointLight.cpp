@@ -1,18 +1,11 @@
 #include "PointLight.hpp"
 
 namespace Raytracer {
-PointLight::PointLight() :
-		Light(),
-		ls(1.0),
-		color(white),
-		location(Vector3d::Zero())
-	{}
+PointLight::PointLight()
+    : Light(), ls(1.0), color(white), location(Vector3d::Zero()) {}
 
 PointLight::PointLight(const Vector3d& location)
-    : Light(), 
-	ls(1.0),
-	color(white),
-	location(location) {}
+    : Light(), ls(1.0), color(white), location(location) {}
 
 PointLight::PointLight(const PointLight& a)
     : Light(a), ls(a.ls), color(a.color), location(a.location) {}
