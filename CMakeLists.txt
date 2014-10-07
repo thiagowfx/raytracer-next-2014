@@ -35,6 +35,7 @@ set(
 	# "${SRC_DIR}/Light.cpp"
 	"${SRC_DIR}/MultiJitteredSampler.cpp"
 	"${SRC_DIR}/NRooksSampler.cpp"
+	"${SRC_DIR}/PerfectSpecularBRDF.cpp"
 	"${SRC_DIR}/PureRandomSampler.cpp"
 	"${SRC_DIR}/Ray.cpp"
 	"${SRC_DIR}/RegularSampler.cpp"
