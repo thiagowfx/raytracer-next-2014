@@ -29,6 +29,7 @@ set(
 	"${SRC_DIR}/BRDF.cpp"
 	# "${SRC_DIR}/DirectionalLight.cpp"
 	"${SRC_DIR}/Globals.cpp"
+	"${SRC_DIR}/GlossySpecularBRDF.cpp"
 	"${SRC_DIR}/HammersleySampler.cpp"
 	"${SRC_DIR}/JitteredSampler.cpp"
 	"${SRC_DIR}/LambertianBRDF.cpp"
