@@ -1,23 +1,42 @@
 #include "BRDF.hpp"
 
 namespace Raytracer {
-BRDF::BRDF() {}
+BRDF::BRDF() {
+	set_sampler(new MultiJittered(10), 15.0);
+}
 
-BRDF::BRDF(const BRDF& brdf) {}
+BRDF::BRDF(const BRDF& brdf) {
+	if (brdf.sampler_ptr) {
+		sampler_ptr = brdf.sampler_ptr->clone();
+	}
+	else {
+		sampler_ptr = NULL;
+	}
+}
 
-BRDF::~BRDF() {}
+BRDF::~BRDF() {
+	if (sampler_ptr) {
+		delete sampler_ptr;
+		sampler_ptr = NULL;
+	}
+}
 
-bool BRDF::operator==(const BRDF& o) const { return true; }
+bool BRDF::operator==(const BRDF& o) const {
+	return *sampler_ptr == *(o.sampler_ptr);
+}
 
-RGBColor BRDF::sample_f(const ShadeRec& sr, const Vector3d& wo, Vector3d& wi) const {
+RGBColor BRDF::sample_f(const ShadeRec& sr, const Vector3d& wo,
+                        Vector3d& wi) const {
   return black;
 }
 
-RGBColor BRDF::sample_f(const ShadeRec& sr, const Vector3d& wo, Vector3d& wi, double& pdf) const {
+RGBColor BRDF::sample_f(const ShadeRec& sr, const Vector3d& wo, Vector3d& wi,
+                        double& pdf) const {
   return black;
 }
 
-RGBColor BRDF::f(const ShadeRec& sr, const Eigen::Vector3d& wo, const Eigen::Vector3d& wi) const {
+RGBColor BRDF::f(const ShadeRec& sr, const Eigen::Vector3d& wo,
+                 const Eigen::Vector3d& wi) const {
   return black;
 }
 
