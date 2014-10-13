@@ -7,5 +7,5 @@ arch=('x86_64' 'i686')
 url="http://thiagowfx.github.io/"
 license=('GPL')
 groups=('thiagowfx')
-depends=('boost' 'cmake' 'eigen' 'gcc' 'gtest' 'qtcreator')
-optdepends=('emacs' 'vim-runtime')
+depends=('boost' 'cmake' 'eigen' 'gcc' 'gtest')
+optdepends=('emacs' 'graphviz' 'qtcreator' 'vim-runtime')
