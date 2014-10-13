@@ -26,6 +26,7 @@ include_directories(/usr/include/eigen3)
 set(
 	RAYTRACER_SOURCES
 	# "${SRC_DIR}/AmbientLight.cpp"
+	"${SRC_DIR}/BBox.cpp"
 	"${SRC_DIR}/BRDF.cpp"
 	# "${SRC_DIR}/DirectionalLight.cpp"
 	"${SRC_DIR}/Globals.cpp"
