@@ -1,12 +1,8 @@
-# Master CMake file for the project.
 cmake_minimum_required(VERSION 2.8.12)
+set(PROJECT_NAME "raytracer")
+project(${PROJECT_NAME} C CXX)
 
-set(PROJECT_NAME_STR "raytracer")
-project(${PROJECT_NAME_STR} C CXX)
-
-######################################################
-
-set(BUILD_DIR "{PROJECT_SOURCE_DIR}/build")
+set(BUILD_DIR "${PROJECT_SOURCE_DIR}/build")
 set(EXT_PROJECTS_DIR "${PROJECT_SOURCE_DIR}/ext")
 set(INCLUDE_DIR_ARRAY "${PROJECT_SOURCE_DIR}/include")
 set(SRC_DIR "${PROJECT_SOURCE_DIR}/src")
@@ -14,14 +10,10 @@ set(TEST_DIR "${PROJECT_SOURCE_DIR}/test")
 
 include_directories(${INCLUDE_DIR_ARRAY})
 
-#######################################################
-
 find_package(Boost REQUIRED COMPONENTS serialization)
 include_directories(${Boost_INCLUDE_DIRS})
 
 include_directories(/usr/include/eigen3)
-
-#######################################################
 
 set(
 	RAYTRACER_SOURCES
@@ -62,10 +54,9 @@ add_executable(
 option(test "Build all tests." ON)
 if (test)
   enable_testing()
-  set(PROJECT_TEST_NAME ${PROJECT_NAME_STR}UnitTests)
+  set(PROJECT_TEST_NAME ${PROJECT_NAME}UnitTests)
   file(GLOB TEST_SRC_FILES ${TEST_DIR}/*Test.cpp)
   add_subdirectory(${EXT_PROJECTS_DIR}/gtest)
-  # find_package(GTest)
   include_directories(${GTEST_INCLUDE_DIRS})
   add_executable(
 	  ${PROJECT_TEST_NAME}
@@ -77,9 +68,8 @@ if (test)
 	  ${PROJECT_TEST_NAME}
 	  ${GTEST_LIBS_DIR}/libgtest.a
 	  ${GTEST_LIBS_DIR}/libgtest_main.a
-	  # ${GTEST_BOTH_LIBRARIES}
 	  ${Boost_LIBRARIES}
 	  pthread
 	  )
-  # GTEST_ADD_TESTS(${PROJECT_TEST_NAME} "" ${TEST_SRC_FILES})
+  GTEST_ADD_TESTS(${PROJECT_TEST_NAME} "" ${TEST_SRC_FILES})
 endif()
