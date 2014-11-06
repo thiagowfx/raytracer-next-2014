@@ -44,7 +44,7 @@ set(
 add_library(RAYTRACER_LIBRARY OBJECT ${RAYTRACER_SOURCES})
 
 add_executable(
-	main
+	raytracer
 	"${SRC_DIR}/main.cpp"
 	$<TARGET_OBJECTS:RAYTRACER_LIBRARY>
 	)
